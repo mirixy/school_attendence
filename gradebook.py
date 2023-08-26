@@ -10,7 +10,7 @@ class Gradebook():
         self.cur = self.con.cursor()
 
     def create_database(self):
-        self.cur.execute("CREATE TABLE gradebook(date, class, grade)")
+        self.cur.execute("CREATE TABLE IF NOT EXISTS gradebook(date, class, grade)")
 
     def set_class(self):
         self.course = input("Which course: ")
@@ -26,6 +26,7 @@ class Gradebook():
         dt = date.today().isoformat()
         data = [dt, course, grade]
         self.cur.execute(query, data)
+        self.con.commit()
 
 
     def get_data(self):
@@ -34,11 +35,15 @@ class Gradebook():
         res = self.cur.fetchall()
         for item in res:
             print(item)
-
+    
+    def delete(self):
+        self.cur.execute('DELETE FROM gradebook;',);
+        self.con.commit()
+        print(f'{self.cur.rowcount} records deleted')
     
 def main():
     gr = Gradebook()
-    #gr.create_database()
+    gr.create_database()
     course = gr.set_class()
     grade = gr.set_grade()
     gr.insert_data(course, grade)
