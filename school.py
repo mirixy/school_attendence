@@ -2,6 +2,7 @@
 Build an app to track days in school, when sick.
 maybe a cronjob to remind me to input if I am sick or not
 Another idea would be to connect it to a calendar and track data there
+TODO: schedule, classes and grades (sperate database!)
 '''
 
 # TODO: refactor code
