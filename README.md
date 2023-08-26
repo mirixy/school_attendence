@@ -11,4 +11,4 @@ accumulate very fast.
 ### GUI
 
 I am thinking about making a GUI for this as well.
-That way I can make it userfriendly, I guess.
+That way it is more userfriendly, I guess.
