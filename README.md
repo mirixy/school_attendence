@@ -12,3 +12,14 @@ accumulate very fast.
 
 I am thinking about making a GUI for this as well.
 That way it is more userfriendly, I guess.
+
+
+## This is how it looks
+#### The default view is empty
+![Default Overview of my program](images/Default.png)
+
+#### When you click on Grades, you will see this layout
+![Grade view of my program](images/Grades.png)
+
+#### When you click on Attendence, you will see this layout
+![Attendence view of my program](images/Attendence.png)
