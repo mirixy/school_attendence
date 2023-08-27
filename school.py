@@ -13,11 +13,13 @@ import sys
 
 class Db():
     def __init__(self):
-        self.con = sqlite3.connect("school.db")
+        self.con = sqlite3.connect("data.db")
         self.cur = self.con.cursor()
-        #self.cur.execute("CREATE TABLE school(date, sick, hours)")
+        
 
-
+    def create_database(self):
+        self.cur.execute("CREATE TABLE IF NOT EXISTS school(date, sick, hours)")
+        
     def get_sick_days(self):
         query = """SELECT * from school"""
         self.cur.execute(query)

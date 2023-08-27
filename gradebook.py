@@ -6,7 +6,7 @@ class Gradebook():
         self.course = ''
         self.course = ''
         self.grade = ''
-        self.con = sqlite3.connect("gradebook.db")
+        self.con = sqlite3.connect("data.db")
         self.cur = self.con.cursor()
 
     def create_database(self):

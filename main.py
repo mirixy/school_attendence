@@ -76,6 +76,12 @@ def delete_att():
     gb = Db()
     gb.del_all_data()
 
+def create():
+    db = Gradebook()
+    db2 = Db()
+    db.create_database()
+    db2.create_database()
+
 # Window
 window = Tk()   #instantiate an instance of a window
 window.geometry("650x350")
@@ -84,13 +90,16 @@ window.title("School Tracker")
 
 # Menu Side Bar
 menu_frame = Frame(window)
-menu_frame.place(x=0, y=0, relwidth=0.3, relheight=1)
+menu_frame.place(x=0, y=15, relwidth=0.3, relheight=1)
 
 new_grade_button = Button(menu_frame, text='New Grade', font=(("Roboto"), 20), width= 15, height=2, command=grades)
 new_grade_button.pack(pady=5, padx=5)
 
 attendence_button = Button(menu_frame, text='Attendence Record', font=(("Roboto"), 20), width= 15, height=2, command=attendence)
 attendence_button.pack(pady=5, padx=5)
+
+create_database_button = Button(menu_frame, text='Create Database', font=(("Roboto"), 20), width=15, height=2, command=create)
+create_database_button.pack(pady=5, padx=5)
 
 # Main Content
 main_frame = Frame(window)
