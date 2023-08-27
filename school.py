@@ -43,8 +43,10 @@ class Db():
             if month == mnth:
                 count += 1
         sick = zip(s_days, s_hrs)
-        print(f"Your sick count this month is at {count}, be aware!")
-        print(f"Sick days: {tuple(sick)} Attended school: {attnd}")
+        if count > 0:
+            return (f"Your sick count this month is at {count}, be aware!")
+        else:
+            pass
 
     def del_all_data(self):
         self.cur.execute('DELETE FROM school;',);

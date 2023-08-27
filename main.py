@@ -55,6 +55,14 @@ def attendence():
     
     delete_button = Button(hour_frame, text='Delete Database', font=(("Roboto"), 20), command=delete_att)
     delete_button.place(relx=0.05, rely=0.38)
+    
+    warning_label = Label(main_frame, text='', fg='red', font=(("Roboto"), 20))
+    warning_label.place(rely=0.5)
+    
+    # Warning
+    gb = Db()
+    warning_label.configure(text=gb.get_sick_days())
+
 
 def submit(course, grade):
     gb = Gradebook()
